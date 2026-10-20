@@ -1,0 +1,15 @@
+name: fx104 GH31 reviewer availability
+run-name: ${{ inputs.helio_execution_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      helio_execution_id: {required: true, type: string}
+      helio_release_id: {required: true, type: string}
+      workflow_revision: {required: true, type: string}
+      release_version: {required: false, type: string}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: fx104-gh31-review
+    steps:
+      - run: echo "Owned GH31 review fixture"
